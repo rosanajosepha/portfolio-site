@@ -1,0 +1,20 @@
+body {
+    text-align: center;
+    background: rgb(253, 249, 236);
+}
+
+#board {
+    border-radius: 20px;
+    margin-top: 100px;
+    background-color: rgb(225, 223, 210);
+    border: 5px solid rgb(86, 55, 55);
+}
+
+p {
+    color: rgb(4, 96, 4);
+  }
+
+body {
+    font-family: 'Courier New', Courier, monospace
+}
+  
