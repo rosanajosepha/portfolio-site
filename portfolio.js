@@ -31,6 +31,9 @@ window.onload = function(){
     board.width = boardWidth;
     context = board.getContext("2d"); // used for drawing on the board
 
+    // get DOM elements
+    startButton = document.getElementById("start-button");
+
     // draw player
     playerImg = new Image();
     playerImg.src = "./img/juni-0002.png";
@@ -40,31 +43,38 @@ window.onload = function(){
     
     requestAnimationFrame(update);
 
-    // get DOM elements
-    startButton = document.getElementById("start-button");
-    // enable player controls
+    // enable player controls (event listeners)
     startButton.addEventListener("click", startGame);
     document.addEventListener("keyup", movePlayer);
     
 }
+function startGame(){
+    const boardElement = document.getElementById("board");
+    
+    // stop any existing game loops
+    if (animationFrameId){
+        cancelAnimationFrame(animationFrameId);
+    }
 
+    // start the game loop
+    animationFrameId = requestAnimationFrame(update);
+
+    if(startButton.textContent == "Start"){
+        startButton.textContent == "Restart";
+    }
+}
 function update(){
     // start game loop
     animateGame = requestAnimationFrame(update);
     context.clearRect(0, 0, board.width, board.height);
 
     // player
-    context.drawImage(
+    context.drawImage(playerImg, player.x, player.y, player.width, player.height);
     // check if player is within bounds
-    let nextPlayerY = player.y + player.velocityY;
     if(!outOfBounds(nextPlayerY)){
         player.y = nextPlayerY;
     }
     context.drawImage(playerImg, player.x, player.y, player.width, player.height);
-}
-
-function startGame(){
-
 }
 
 function movePlayer(e){
