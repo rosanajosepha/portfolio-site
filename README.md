@@ -5,6 +5,7 @@ Instead of a traditional portfolio, I’ve added a layer of interactivity and fu
 Here’s how it works:
 
 • Move the character around: Navigate the game world to discover different sections of my portfolio.
+
 • Interactive elements: Walk up to objects or areas to view my resume, experience, projects, and more!
 
 This is more than just a portfolio—it's a creative way to demonstrate my coding skills and passion for game design.
